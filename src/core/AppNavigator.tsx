@@ -2,7 +2,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {Home} from '../home/screens/Home';
-import {Settings} from '../home/screens/Settings';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -13,10 +12,30 @@ export function AppNavigator() {
     <NavigationContainer>
       <Tab.Navigator
         tabBarPosition="bottom"
-        screenOptions={{tabBarItemStyle: {paddingBottom: insets.bottom}}}>
-        <Tab.Screen name="Home" component={Home} />
+        screenOptions={{
+          // lazy: true,
+          tabBarItemStyle: {paddingBottom: insets.bottom},
+        }}>
+        <Tab.Screen
+          name="First"
+          component={Home}
+          initialParams={{backgroundColor: '#ffc93c', animation: 'car'}}
+        />
 
-        <Tab.Screen name="Settings" component={Settings} />
+        <Tab.Screen
+          name="Second"
+          component={Home}
+          initialParams={{backgroundColor: '#ff6465', animation: 'crab'}}
+        />
+
+        <Tab.Screen
+          name="Third"
+          component={Home}
+          initialParams={{
+            backgroundColor: '#ff8c00',
+            animation: 'coffee-maker',
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
