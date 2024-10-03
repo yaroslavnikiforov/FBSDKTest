@@ -4,7 +4,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useRoute} from '@react-navigation/native';
 import {styles} from './styles';
 
-const items = Array.from({length: 1});
+const items = Array.from({length: 2});
 
 export function Home() {
   const insets = useSafeAreaInsets();
